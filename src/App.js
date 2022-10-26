@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+// imports
 import './App.css';
+import { useState } from 'react';
+
+// components
+import Header from './components/Header';
+import QuickCreate from './components/QuickCreate/QuickCreate';
+import mainControllerContext from './Context/MainControllerContext';
+
+import CustomWorkout from './components/CustomWorkout/CustomWorkout';
+import Favorites from './components/Favorites';
+
 
 function App() {
+
+  // state management
+  const [showQuickCreate, setShowQuickCreate] = useState(false);
+  const [showHelp, setShowHelp] = useState(true);
+  const [showAddWorkout, setShowAddWorkout] = useState(false);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <mainControllerContext.Provider value={{
+        showQuickCreate,
+        setShowQuickCreate,
+        showAddWorkout,
+        setShowAddWorkout
+      }}>
+        <Header />
+        <QuickCreate />
+        <CustomWorkout />
+        <Favorites />
+        <button className='helpContainer main-button'>Help</button>
+      </mainControllerContext.Provider>
     </div>
   );
 }
