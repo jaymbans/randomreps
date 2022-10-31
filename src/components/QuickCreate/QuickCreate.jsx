@@ -9,20 +9,17 @@ function QuickCreate() {
   const toggleQuickCreatePanel = () => {
     controller.setShowQuickCreate(true);
     controller.setShowAddWorkout(false);
-    document.querySelector('body').classList.add('transition-green-bg')
-    document.querySelector('.header').style.color = 'rgb(59, 59, 59)'
+    document.querySelector('.title').classList.add('d-none')
     return;
   }
 
   return (
     <>
       {
-        controller.showQuickCreate &&
-          !controller.showAddWorkout ?
-          <QuickCreatePanel /> :
-          <button onClick={toggleQuickCreatePanel} className='quickCreateContainer main-button'>
-            Quick Create
-          </button>
+        <button
+          onClick={toggleQuickCreatePanel} className='quickCreateContainer main-button'>
+          Quick Create
+        </button>
       }
 
     </>

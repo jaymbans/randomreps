@@ -20,7 +20,7 @@ function CustomWorkout() {
         <CustomWorkoutPanel />
         :
         <button onClick={toggleAddWorkoutPanel} className='customWorkoutContainer main-button'>
-          Add Custom Workout
+          Add Workout
         </button>
       }
     </>

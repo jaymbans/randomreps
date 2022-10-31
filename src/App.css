@@ -1,11 +1,12 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Rubik&family=Space+Mono&display=swap');
+
 /* page structure */
 :root {
-  --white: white;
   --grayish: rgb(59, 59, 59);
   --purple: rgb(129, 61, 233);
   --background: rgb(54, 50, 50);
   --red: rgb(188, 49, 63);
-  font-family: monospace;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +17,30 @@
 }
 
 body {
-  background-color: rgb(54, 50, 50);
+  background-color: rgb(0, 0, 0);
+  font-family: 'Rubik';
   color: black;
   width: 80%;
   position: relative;
   transition: all 1500ms;
   height: 100vh;
+}
+
+.start-btn {
+  margin-top: 30px;
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  border: solid rgb(4, 255, 121);
+  color: rgb(4, 255, 121);
+  background: none;
+  font-size: .8rem;
+}
+
+.start-btn:hover {
+  background: rgb(4, 255, 121);
+  color: black;
+  cursor: pointer;
 }
 
 
@@ -35,12 +54,12 @@ body {
 }
 
 section.header {
-  color: var(--white);
-  border-bottom: 4px solid var(--white);
+  color: white;
   width: 100%;
+  height: 270px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -51,59 +70,65 @@ h1 {
 /* main screen buttons */
 .main-button {
   width: 100%;
-  height: 70px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-radius: 10px;
-  border: 2px solid var(--white);
-  margin-top: 10px;
   cursor: pointer;
   color: white;
-  background: var(--background);
+  border: none;
+  background-color: inherit;
+  font-size: .9rem;
 }
 
-.main-button:hover {
-  background: rgb(105, 105, 105);
-  font-weight: bold;
-  color: white;
+.main-button:hover,
+.logo:hover {
+  border-bottom: 2px solid white;
 }
+
 
 /* quick create */
-.quickCreateContainer {
-  background: var(--background);
-  color: white;
-}
-
 .quickCreatePanel {
   background: white;
-  height: 350px;
+  position: relative;
+  max-width: 800px;
+  height: 100%;
   width: 100%;
   border-radius: 5px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  padding: 35px 0;
+}
+
+.qc-title {
+  font-weight: bold;
+  border-bottom: 2px solid rgb(4, 255, 121);
+  display: flex;
+  justify-content: center;
 }
 
 .submit-btn {
   width: 80%;
-  background: var(--background);
+  background: black;
   color: white;
-  height: 60px;
+  height: 30px;
   padding: 10px;
-  border-color: var(--background);
-  border-radius: 5px;
   border-style: solid;
   margin: 10px;
+  border: none;
   font-size: large;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
 }
 
 .submit-btn:hover {
-  background: rgb(90, 84, 84);
+  background: rgb(4, 255, 121);
 }
 
 .quickCreatePanel button:hover {
@@ -116,18 +141,22 @@ h1 {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-right: 5px;
   max-width: 500px;
-  font-weight: 700;
+  width: 80%;
   padding-left: 10px;
+  color: gray;
+  font-weight: 700;
+  height: 40px;
 }
 
 .quick-select select {
-  border: none;
+  border: .5px solid rgba(128, 128, 128, 0.764);
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--red);
+  width: 50%;
+  background: rgb(228, 228, 228);
+  color: rgb(62, 62, 62);
 }
 
 .quick-select option {
@@ -139,31 +168,20 @@ h1 {
   font-weight: 400;
 }
 
-/* help */
-.helpContainer {
-  background: var(--background);
-  color: white;
-}
-
-.helpContainer:hover {
-  background: white;
-  color: var(--background)
-}
-
 .close-btn {
   width: 5rem;
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background);
+  background: black;
   border-color: var(--background);
-  border-radius: 5px;
   border-style: none;
   margin: 10px;
   font-weight: 550;
   cursor: pointer;
   color: white;
+  transition: all 1s;
 }
 
 .close-btn:hover {
@@ -172,7 +190,6 @@ h1 {
 
 /* Custom Workout */
 .customWorkoutContainer {
-  background: var(--background);
   color: white;
 }
 
@@ -215,4 +232,103 @@ h1 {
   background: rgb(193, 95, 245);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* workout output */
+div.workout-output {
+  width: 100%;
+  height: 300px;
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  flex-direction: column;
+}
+
+section.workout-output {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.nav,
+.navbar-left,
+.navbar-right {
+  display: flex;
+}
+
+.nav {
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95vw;
+}
+
+.navbar-right {
+  width: 70%;
+  justify-content: flex-end;
+}
+
+.navbar-left {
+  width: 30%;
+}
+
+.main-frame {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-screen-bg {
+  background: url('./media//dumbbell-bg.jpeg');
+  box-shadow: 0 0 150px 150px black inset;
+}
+
+.d-none {
+  visibility: hidden;
+}
+
+.logo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  color: white;
+  border: none;
+}
+
+/* animations */
+#slide {
+  position: relative;
+  top: -300px;
+  -webkit-animation: slide .5s forwards;
+  animation: slide .5s forwards;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    top: 0;
+  }
+}
+
+.dumbbell-gif {
+  height: 60px;
+  width: 60px;
+  background-image: url(./media/dumbbellgif.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

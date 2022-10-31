@@ -4,11 +4,9 @@ import { useState } from 'react';
 
 // components
 import Header from './components/Header';
-import QuickCreate from './components/QuickCreate/QuickCreate';
 import mainControllerContext from './Context/MainControllerContext';
+import MainFrame from './components/MainFrame';
 
-import CustomWorkout from './components/CustomWorkout/CustomWorkout';
-import Favorites from './components/Favorites';
 
 
 function App() {
@@ -17,7 +15,6 @@ function App() {
   const [showQuickCreate, setShowQuickCreate] = useState(false);
   const [showHelp, setShowHelp] = useState(true);
   const [showAddWorkout, setShowAddWorkout] = useState(false);
-
 
   return (
     <div className="app-container">
@@ -28,10 +25,7 @@ function App() {
         setShowAddWorkout
       }}>
         <Header />
-        <QuickCreate />
-        <CustomWorkout />
-        <Favorites />
-        <button className='helpContainer main-button'>Help</button>
+        <MainFrame />
       </mainControllerContext.Provider>
     </div>
   );

@@ -340,3 +340,113 @@ export const ootbWorkouts = {
     },
   ]
 }
+
+export const ootbReps = {
+  data: [
+    {
+      sets: 3,
+      reps: 12
+    },
+    {
+      sets: 8,
+      reps: 4
+    },
+    {
+      sets: 4,
+      reps: 12
+    },
+    {
+      sets: 3,
+      reps: 10
+    },
+    {
+      sets: 4,
+      reps: 15
+    },
+    {
+      sets: 3,
+      reps: 15
+    },
+    {
+      sets: 4,
+      reps: 10
+    },
+    {
+      sets: 10,
+      reps: 2
+    },
+    {
+      sets: 5,
+      reps: 10
+    },
+    {
+      sets: 5,
+      reps: 12
+    },
+    {
+      sets: 4,
+      reps: 20
+    },
+    {
+      sets: 6,
+      reps: 6
+    },
+    {
+      sets: 7,
+      reps: 10
+    },
+    {
+      sets: 7,
+      reps: 4
+    },
+    {
+      sets: 5,
+      reps: 5
+    },
+  ]
+}
+
+// generate random indices for the workouts to grab random sets and reps
+export const randomRepGenerator = () => {
+  return ootbReps.data[Math.floor(Math.random() * ootbReps.data.length)]
+};
+
+
+export const randomWorkoutGenerator = (duration, muscleCategory) => {
+  // empty workout array for output
+  const workoutArr = [];
+
+  //  filter for the workouts needed
+  const filteredWorkouts = ootbWorkouts.data.filter(workout => workout.muscleGroup === muscleCategory);
+
+  // generate random index for the workout (check if the index is already used)
+  const numOfWorkouts = {
+    30: 5,
+    45: 6,
+    60: 7,
+  }
+
+  const workoutsUsed = {};
+
+  for (let i = 0; i < numOfWorkouts[duration] - 1; i++) {
+    let randomIdx = Math.floor(Math.random() * filteredWorkouts.length)
+
+    // keep changing the index until the workout is not duplicate
+    while (workoutsUsed[filteredWorkouts[randomIdx].workoutName]) {
+      randomIdx = Math.floor(Math.random() * filteredWorkouts.length)
+    }
+
+    workoutsUsed[filteredWorkouts[randomIdx].workoutName] = randomRepGenerator();
+  }
+
+  // push the workout and the set into the workout array
+  for (let workout in workoutsUsed) {
+    workoutArr.push({
+      workoutName: workout,
+      sets: workoutsUsed[workout].sets,
+      reps: workoutsUsed[workout].reps
+    })
+  }
+
+  return workoutArr;
+}
