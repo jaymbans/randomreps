@@ -412,12 +412,14 @@ export const randomRepGenerator = () => {
 };
 
 
-export const randomWorkoutGenerator = (duration, muscleCategory) => {
+export const randomWorkoutGenerator = (duration, muscleCategory, includeCustom = []) => {
   // empty workout array for output
   const workoutArr = [];
 
   //  filter for the workouts needed
-  const filteredWorkouts = ootbWorkouts.data.filter(workout => workout.muscleGroup === muscleCategory);
+  let filteredWorkouts = ootbWorkouts.data.filter(workout => workout.muscleGroup === muscleCategory);
+
+  filteredWorkouts.push(...includeCustom)
 
   // generate random index for the workout (check if the index is already used)
   const numOfWorkouts = {

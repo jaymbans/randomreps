@@ -6,23 +6,17 @@ function CustomWorkout() {
   const controller = useContext(mainControllerContext);
 
   const toggleAddWorkoutPanel = () => {
-    controller.setShowAddWorkout(true);
     controller.setShowQuickCreate(false);
-    document.querySelector('body').classList.add('transition-purple-bg')
+    controller.setShowAddWorkout(true);
+    document.querySelector('.title').classList.add('d-none');
     return;
   }
 
   return (
     <>
-      {controller.showAddWorkout &&
-        !controller.showQuickCreatePanel
-        ?
-        <CustomWorkoutPanel />
-        :
-        <button onClick={toggleAddWorkoutPanel} className='customWorkoutContainer main-button'>
-          Add Workout
-        </button>
-      }
+      <button onClick={toggleAddWorkoutPanel} className='customWorkoutContainer main-button'>
+        Add Workout
+      </button>
     </>
   )
 }

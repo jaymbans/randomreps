@@ -7,6 +7,8 @@ function Logo() {
 
   const toggleQuickCreatePanel = () => {
     controller.setShowQuickCreate(false);
+    controller.setShowAddWorkout(false);
+    controller.setShowWorkoutList(false);
     document.querySelector('.title').classList.remove('d-none');
   }
 

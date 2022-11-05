@@ -3,6 +3,7 @@ import mainControllerContext from '../../Context/MainControllerContext';
 import '../../App.css'
 import { randomWorkoutGenerator } from '../../workouts/workouts'
 import WorkoutOutput from '../../workouts/WorkoutOutput';
+import { ToastContainer, toast } from 'react-toastify';
 
 function QuickCreatePanel() {
   const controller = useContext(mainControllerContext);
@@ -10,6 +11,28 @@ function QuickCreatePanel() {
   const [userMuscle, setUserMuscle] = useState('chest');
   const [userDuration, setUserDuration] = useState(30);
   const [loadWorkoutOutput, setLoadWorkoutOutput] = useState(false);
+  const [includeCustom, setIncludeCustom] = useState(false);
+
+  const customWorkoutToggle = (e) => {
+    const workOutStorage = JSON.parse(localStorage.getItem('customWorkouts')).filter(workout => workout.muscleGroup === userMuscle)
+
+    if (!workOutStorage.length) {
+      toast.error(`You have no custom workouts for ${userMuscle} day! Head to the custom workout page to add your own!`)
+      return;
+    }
+
+    setIncludeCustom(!includeCustom);
+
+    let node = e.target;
+    if (![node.classList[0]].includes('custom-workout-dial')) {
+      node = node.parentNode;
+    }
+
+
+    [...node.classList].includes('custom-workout-dial-turned-on') ?
+      node.classList.remove('custom-workout-dial-turned-on') :
+      node.classList.add('custom-workout-dial-turned-on');
+  }
 
 
   const [userWorkout, setUserWorkout] = useState({
@@ -22,13 +45,23 @@ function QuickCreatePanel() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let randomWorkouts = randomWorkoutGenerator(userDuration, userMuscle);
+    let randomWorkouts;
+    let customWorkouts;
 
+    const workOutStorage = JSON.parse(localStorage.getItem('customWorkouts')) || [];
+
+    if (includeCustom) {
+      customWorkouts = workOutStorage.filter(workout => workout.muscleGroup === userMuscle);
+    } else {
+      customWorkouts = [];
+    }
+
+    randomWorkouts = randomWorkoutGenerator(userDuration, userMuscle, customWorkouts)
 
     setUserWorkout({
       muscle: userMuscle,
       duration: userDuration,
-      workouts: [...randomWorkouts],
+      workouts: [...randomWorkouts]
     })
 
     setLoadWorkoutOutput(true);
@@ -56,6 +89,7 @@ function QuickCreatePanel() {
       <div className="dumbbell-gif"></div>
       <h1 style={{ color: 'white' }}>Your lift is our command</h1>
       <h3 style={{ color: 'white' }}>yes... it's that easy</h3>
+      <ToastContainer theme='dark' />
       <form id='quick-create-form' onSubmit={handleSubmit} className="quickCreatePanel">
         <p className="qc-title">Quick Create</p>
         <div className="quick-select">
@@ -77,6 +111,11 @@ function QuickCreatePanel() {
             <option value="60">60 min</option>
           </select>
         </div>
+        <span className='customWorkoutSpan'>
+          Include Custom Workouts <button onClick={customWorkoutToggle} type='button' className="custom-workout-dial">
+            <div className="custom-workout-dial-blip"></div>
+          </button>
+        </span>
         <button className='submit-btn'>
           Load Workout
         </button>

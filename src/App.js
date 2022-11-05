@@ -15,6 +15,7 @@ function App() {
   const [showQuickCreate, setShowQuickCreate] = useState(false);
   const [showHelp, setShowHelp] = useState(true);
   const [showAddWorkout, setShowAddWorkout] = useState(false);
+  const [showWorkoutList, setShowWorkoutList] = useState(false);
 
   return (
     <div className="app-container">
@@ -22,7 +23,9 @@ function App() {
         showQuickCreate,
         setShowQuickCreate,
         showAddWorkout,
-        setShowAddWorkout
+        setShowAddWorkout,
+        showWorkoutList,
+        setShowWorkoutList
       }}>
         <Header />
         <MainFrame />

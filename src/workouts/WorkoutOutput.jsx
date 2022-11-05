@@ -9,7 +9,7 @@ function WorkoutOutput(props) {
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-  }, [props])
+  }, [props.workout])
 
   return (
     <section className='workout-output'>

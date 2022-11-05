@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import '../App.css'
 import QuickCreate from '../components/QuickCreate/QuickCreate';
 import CustomWorkout from '../components/CustomWorkout/CustomWorkout';
-import Favorites from '../components/Favorites';
+import WorkoutList from '../components/WorkoutList';
 import Logo from './Logo';
 
 function Navbar() {
@@ -15,7 +15,7 @@ function Navbar() {
       <div className="navbar-right">
         <QuickCreate />
         <CustomWorkout />
-        <Favorites />
+        <WorkoutList />
       </div>
     </div>
   )

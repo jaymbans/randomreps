@@ -89,7 +89,9 @@ h1 {
 
 
 /* quick create */
-.quickCreatePanel {
+.quickCreatePanel,
+.customWorkoutPanel,
+.workoutListPanel {
   background: white;
   position: relative;
   max-width: 800px;
@@ -132,14 +134,12 @@ h1 {
 }
 
 .quickCreatePanel button:hover {
-  background: rgb(95, 245, 117);
   border: none;
   cursor: pointer;
 }
 
 .quick-select {
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
   margin-right: 5px;
@@ -150,6 +150,7 @@ h1 {
   font-weight: 700;
   height: 40px;
 }
+
 
 .quick-select select {
   border: .5px solid rgba(128, 128, 128, 0.764);
@@ -205,19 +206,16 @@ h1 {
   align-items: center;
 }
 
-.customWorkoutPanel .quick-select {
-  max-width: 500px;
+.custom-workout-input {
   display: flex;
-  margin: 0;
-  justify-content: flex-start;
-  padding-left: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .customWorkoutPanel input {
-  margin-left: 5px;
-  width: 30%;
+  margin-right: 5px;
   border: none;
-  border-bottom: 2px ridge red;
+  border: 2px ridge black;
   display: flex;
   justify-content: center;
 }
@@ -331,4 +329,92 @@ section.workout-output {
   background-image: url(./media/dumbbellgif.gif);
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  top: 150px
+}
+
+.thought-icon {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 150px;
+  color: white;
+}
+
+.workouts-list {
+  font-weight: bold;
+}
+
+.workoutListPanel {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.ootb-work-out-list,
+.custom-work-out-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.workout-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-workout {
+  background: var(--red);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: auto;
+  border-radius: 3px;
+}
+
+.custom-workout-dial {
+  content: "";
+  height: 20px;
+  background: red;
+  width: 80px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  transition: all .5s;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  margin-left: 10px;
+}
+
+.custom-workout-dial-blip {
+  background: white;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+}
+
+
+
+.custom-workout-dial-turned-on {
+  background: green;
+  justify-content: flex-end;
+}
+
+.customWorkoutSpan {
+  display: flex;
+  font-size: small;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80%;
+  max-width: 500px;
+  color: gray;
 }

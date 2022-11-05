@@ -9,6 +9,7 @@ function QuickCreate() {
   const toggleQuickCreatePanel = () => {
     controller.setShowQuickCreate(true);
     controller.setShowAddWorkout(false);
+    controller.setShowWorkoutList(false);
     document.querySelector('.title').classList.add('d-none')
     return;
   }
