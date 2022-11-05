@@ -4,6 +4,7 @@ import '../App.css'
 import { ootbWorkouts } from '../workouts/workouts';
 import useLocalStorage from '../utilities/useLocalStorage'
 import { MdCancelPresentation } from 'react-icons/md'
+import { GiMuscleUp } from 'react-icons/gi'
 
 function WorkoutListPanel() {
   const controller = useContext(mainControllerContext);
@@ -25,6 +26,7 @@ function WorkoutListPanel() {
 
   return (
     <>
+      <GiMuscleUp className='muscle-logo' />
       <h1 style={{ color: 'white' }}>Workouts</h1>
       <h3 style={{ color: 'white' }}>all the currently tracked workouts</h3>
       <div className="workoutListPanel">

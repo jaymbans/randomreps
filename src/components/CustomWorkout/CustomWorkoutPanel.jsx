@@ -49,14 +49,14 @@ function CustomWorkoutPanel() {
     <>
       <TfiThought className='thought-icon' />
       <ToastContainer theme='dark' />
-      <h1 style={{ color: 'white' }}>Want to Try a new Workout?</h1>
-      <h3 style={{ color: 'white' }}>Add your own workout below</h3>
+      <h1 className='main-page-title'>Want to Try a new Workout?</h1>
+      <h3 className='main-page-title'>Add your own workout below</h3>
       <form onSubmit={handleSubmit} className="customWorkoutPanel">
         <p className="qc-title">Custom Workout</p>
-        <div className="quick-select">
+        <div className="quick-select movement">
           <label name='workoutName'>Movement Name:</label>
           <div className="custom-workout-input">
-            <input type="text" name="workoutName" id="workoutName" />
+            <input className='movement' type="text" name="workoutName" id="workoutName" />
             <p className='desc'>(curl, squat, etc.)</p>
           </div>
         </div>

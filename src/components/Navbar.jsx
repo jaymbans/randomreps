@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 import '../App.css'
 import QuickCreate from '../components/QuickCreate/QuickCreate';
 import CustomWorkout from '../components/CustomWorkout/CustomWorkout';

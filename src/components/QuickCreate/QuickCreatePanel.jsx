@@ -70,6 +70,8 @@ function QuickCreatePanel() {
 
   const handleMuscleChange = (e) => {
     setUserMuscle(e.target.value);
+    setIncludeCustom(false);
+    document.querySelector('.custom-workout-dial').classList.remove('custom-workout-dial-turned-on')
     return;
   }
   const handleDurationChange = (e) => {
@@ -87,8 +89,8 @@ function QuickCreatePanel() {
   return (
     <>
       <div className="dumbbell-gif"></div>
-      <h1 style={{ color: 'white' }}>Your lift is our command</h1>
-      <h3 style={{ color: 'white' }}>yes... it's that easy</h3>
+      <h1 className='main-page-title'>Your lift is our command</h1>
+      <h3 className='main-page-title'>yes... it's that easy</h3>
       <ToastContainer theme='dark' />
       <form id='quick-create-form' onSubmit={handleSubmit} className="quickCreatePanel">
         <p className="qc-title">Quick Create</p>

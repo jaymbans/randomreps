@@ -89,6 +89,10 @@ h1 {
 
 
 /* quick create */
+.main-page-title {
+  color: white;
+}
+
 .quickCreatePanel,
 .customWorkoutPanel,
 .workoutListPanel {
@@ -311,6 +315,7 @@ section.workout-output {
   animation: slide .5s forwards;
 }
 
+
 @-webkit-keyframes slide {
   100% {
     top: 0;
@@ -333,7 +338,8 @@ section.workout-output {
   top: 150px
 }
 
-.thought-icon {
+.thought-icon,
+.muscle-logo {
   height: 60px;
   width: 60px;
   position: absolute;
@@ -417,4 +423,48 @@ section.workout-output {
   width: 80%;
   max-width: 500px;
   color: gray;
+}
+
+@media (max-width: 700px) {
+  .app-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-button {
+    font-size: .7rem;
+  }
+
+  .main-page-title {
+    text-align: center;
+  }
+
+  .quick-select select {
+    width: 30%;
+  }
+
+  section.header {
+    height: 170px;
+  }
+
+  .movement,
+  .custom-workout-input {
+    flex-direction: column;
+  }
+
+  .custom-workout-input p {
+    margin-top: 2px;
+  }
+
+  .ootb-work-out-list,
+  .custom-work-out-list {
+    text-align: center;
+    font-size: .7rem;
+  }
+
+  .home-screen-bg {
+    box-shadow: 0 0 150px 150px black inset;
+    background-position: top;
+  }
+
 }
