@@ -433,6 +433,7 @@ section.workout-output {
 
   .main-button {
     font-size: .7rem;
+    font-weight: bold;
   }
 
   .main-page-title {
@@ -460,6 +461,7 @@ section.workout-output {
   .custom-work-out-list {
     text-align: center;
     font-size: .7rem;
+    width: 48%;
   }
 
   .home-screen-bg {
