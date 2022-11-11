@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import mainControllerContext from '../../Context/MainControllerContext';
 import '../../App.css'
 import { randomWorkoutGenerator } from '../../workouts/workouts'
@@ -14,9 +14,14 @@ function QuickCreatePanel() {
   const [includeCustom, setIncludeCustom] = useState(false);
 
   const customWorkoutToggle = (e) => {
-    const workOutStorage = JSON.parse(localStorage.getItem('customWorkouts')).filter(workout => workout.muscleGroup === userMuscle)
+    let workOutStorage
+    if (JSON.parse(localStorage.getItem('customWorkouts'))) {
+      workOutStorage = JSON.parse(localStorage.getItem('customWorkouts')).filter(workout => workout.muscleGroup === userMuscle);
+    } else {
+      workOutStorage = null;
+    }
 
-    if (!workOutStorage.length) {
+    if (!workOutStorage || !workOutStorage.length) {
       toast.error(`You have no custom workouts for ${userMuscle} day! Head to the custom workout page to add your own!`)
       return;
     }

@@ -280,6 +280,10 @@ section.workout-output {
   width: 30%;
 }
 
+.hamburger-menu {
+  visibility: hidden;
+}
+
 .main-frame {
   width: 100%;
   height: 600px;
@@ -290,7 +294,11 @@ section.workout-output {
 
 .home-screen-bg {
   background: url('./media//dumbbell-bg.jpeg');
-  box-shadow: 0 0 150px 150px black inset;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset -2em -7em 5em black, inset 2em 7em 5em black;
+  ;
+  background-size: 40vw;
 }
 
 .d-none {
@@ -425,6 +433,12 @@ section.workout-output {
   color: gray;
 }
 
+@media (max-width: 5560px) {
+  .home-screen-bg {
+    box-shadow: inset -2em -15em 5em black, inset 2em 7em 5em black;
+  }
+}
+
 @media (max-width: 700px) {
   .app-container {
     display: flex;
@@ -465,8 +479,66 @@ section.workout-output {
   }
 
   .home-screen-bg {
-    box-shadow: 0 0 150px 150px black inset;
-    background-position: top;
+    box-shadow: inset -2em -15em 5em black, inset 2em 7em 5em black;
   }
 
+  .navbar-right,
+  .nav {
+    flex-direction: column;
+  }
+
+  .navbar-right {
+    width: 50%;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(600px);
+    height: 100px;
+  }
+
+
+  .navbar-right.active {
+    visibility: visible;
+    transform: translateX(17rem);
+  }
+
+  .navbar-left {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger-menu {
+    visibility: visible;
+    background: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 1px;
+  }
+
+  .hamburger-menu span {
+    background: white;
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 2px auto;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger-menu .bar.active:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu .bar.active:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger-menu .bar.active:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }

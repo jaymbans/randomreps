@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import mainControllerContext from '../Context/MainControllerContext';
 import CustomWorkoutPanel from './CustomWorkout/CustomWorkoutPanel';
 import QuickCreatePanel from './QuickCreate/QuickCreatePanel';
@@ -11,7 +11,6 @@ function MainFrame() {
     controller.setShowQuickCreate(true);
     controller.setShowAddWorkout(false);
     document.querySelector('.title').classList.add('d-none');
-    console.log(controller)
     return;
   }
 
