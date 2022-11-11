@@ -441,6 +441,10 @@ section.workout-output {
 }
 
 @media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .app-container {
     display: flex;
     justify-content: center;
@@ -489,7 +493,7 @@ section.workout-output {
   }
 
   .navbar-right {
-    width: 50%;
+    width: 100%;
     visibility: visible;
     transition: all 0.3s ease-in-out;
     transform: translateX(600px);
@@ -499,7 +503,7 @@ section.workout-output {
 
   .navbar-right.active {
     visibility: visible;
-    transform: translateX(17rem);
+    transform: translateX(0rem);
   }
 
   .navbar-left {
