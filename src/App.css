@@ -435,7 +435,8 @@ section.workout-output {
 
 @media (max-width: 5560px) {
   .home-screen-bg {
-    box-shadow: inset -2em -15em 5em black, inset 2em 7em 5em black;
+    box-shadow: inset -2em -10em 5em black, inset 3em 7em 6em black;
+    background-size: 100vw;
   }
 }
 
