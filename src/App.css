@@ -494,17 +494,19 @@ section.workout-output {
   }
 
   .navbar-right {
+    position: fixed;
     width: 100%;
-    visibility: visible;
+    visibility: hidden;
     transition: all 0.3s ease-in-out;
-    transform: translateX(600px);
+    right: -100%;
+    top: 27px;
     height: 100px;
   }
 
 
   .navbar-right.active {
     visibility: visible;
-    transform: translateX(0rem);
+    right: 0;
   }
 
   .navbar-left {
