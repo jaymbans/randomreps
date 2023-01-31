@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Random Reps
+<hr>
+<h3><a target="_blank" href="https://jaymbans.github.io/randomreps/">Random Reps</a> is a workout web application that selects random workout sets and reps depending on a desired muscle selection.</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Current Features:
+<ul>
+  <li>Quick Workout Generation</li>
+  <li>Add and Delete Custom workouts</li>
+  <li>Create Workouts targeted by a muscle split</li>
+</ul>
 
-## Available Scripts
+### Upcoming Features:
+<ul>
+  <li>Push/Pull Workout splits</li>
+  <li>Targeted Workouts</li>
+  <li>Select # of Workouts</li>
+  <li>Cardio/HIIT workouts</li>
+</ul>
 
-In the project directory, you can run:
+## Directions - Quick Create
+For creating a workout with a couple of clicks!
+<ol>
+  <li>Click the CTA "<i>Let's Make Results</i>" button or the "<i>Quick Create</i>" tab</li>
+  <li>Select a Muscle Target (defaulted to chest)</li>
+  <li>Select how long you would like to work out (defaulted to 30min)</li>
+  <li>*Optional* Toggle the custom workout dial if you have added workouts</li>
+  <li>Click "<i>Load Workout</i>" button to generate results!</li>
+</ol>
 
-### `npm start`
+## Directions - Add Custom Workout
+\*Tip* it may be helpful to check the list of workouts already included on the <i>Workouts</i> tab found in the heading
+<ol>
+  <li>Select the <i>"Add Workout"</i> tab</li>
+  <li>Write a custom workout name. Tip: Make it Specific! (i.e. Good! ✅ "Reverse Bicep Curl: Slow Negative" Bad! ❌"Bicep Curl")</li>
+  <li>Select the muscle your workout targets</li>
+  <li>If applicable, select if the workout is a push or pull. If you are unsure, select N/A!</li>
+  <li>Click "<i>Add Custom Workout</i>" button. Your workout is now added! To make sure it will be generated, toggle the custom workout dial in the "<i>Quick Create</i>" tab!</li>
+</ol>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Directions - Delete Custom Workout
+<ol>
+  <li>Select the "<i>Workouts</i>" tab</li>
+  <li>Under the <i>Custom Workouts</i> column header, click on the ❌ next to the workout you would like to delete</li>
+  <li>Your workout is deleted feel free to add another!</li>
+</ol>
